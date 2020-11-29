@@ -1,3 +1,5 @@
+//this class is used for pdf adapter
+//by extending ArrayAdapter class
 package com.example.pdfreader;
 
 import android.content.Context;
@@ -39,6 +41,7 @@ public class PDFAdapter extends ArrayAdapter<File> {
         else return 1;
     }
 
+    //this will convert the view into pdfview
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView == null){
@@ -63,3 +66,19 @@ public class PDFAdapter extends ArrayAdapter<File> {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,6 @@
+//this class is used for the welcome screen
+//which is also called splashscreen
+
 package com.example.pdfreader;
 
 import android.content.Intent;
@@ -17,8 +20,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        //this line is calling the function for full screen
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
+        //after SPLASH_TIME_OUT time is over
+        //it will open to MainActivity class
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -29,6 +35,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         }, SPLASH_TIME_OUT);
     }
 
+    //this function is for full screen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

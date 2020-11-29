@@ -1,3 +1,4 @@
+//this class is used for showing the pdf files
 package com.example.pdfreader;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class ViewPdfFiles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pdf);
 
+        //this line is calling the function for full screen
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         pdfView = findViewById(R.id.pdfView);
@@ -27,6 +29,7 @@ public class ViewPdfFiles extends AppCompatActivity {
         displayPDF();
     }
 
+    //pdf basic feature options
     private void displayPDF() {
         pdfView.fromFile(com.example.pdfreader.MainActivity.fileList.get(position))
                 .enableSwipe(true)
@@ -35,6 +38,7 @@ public class ViewPdfFiles extends AppCompatActivity {
                 .load();
     }
 
+    //this function is for full screen
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -49,3 +53,17 @@ public class ViewPdfFiles extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

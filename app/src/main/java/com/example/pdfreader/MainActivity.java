@@ -1,3 +1,5 @@
+//this is the main class
+//storage permission is asked here
 package com.example.pdfreader;
 
 
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         permission_fn();
 
+        //what will happen on pdf click is being coded here
+        //it will go to ViewPdfFiles class
         lv_pdf.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //whether I have permission or not is being checked here
     private void permission_fn() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -70,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //storage permission is being requested here
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -86,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //the pdf is showed in list form through this code
     public ArrayList<File> getfile(File dir) {
         File listFile[] = dir.listFiles();
         if (listFile != null && listFile.length > 0) {
